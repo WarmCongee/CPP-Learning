@@ -138,3 +138,44 @@ int main(){
 }
 ```
 
+## ：的用法
+
+```c++
+class report
+{
+	private:
+		std::string str;
+	public:
+		report(const std::string s) : str(s) {//？？？？？
+		std::cout << "Object created.\n";
+}
+~report() {
+		std::cout << "Object deleted.\n";
+}
+```
+
+图中不解的那一行代码意义如下，从：的作用出发
+
+（1）表示机构内位域的定义（即该变量占几个bit空间）
+
+```c++
+typedef struct _XXX{//命名风格之一
+
+unsigned char a:4;//指该变量占四个字节
+
+unsigned char c;
+
+} XXX;
+```
+
+（2）构造函数后面的冒号起分割作用，是类给成员变量赋值的方法，初始化列表，更适用于成员变量的常量const型。
+
+```c++
+class _XXX{
+	private:
+    	std::string int str;
+    public:
+		_XXX(const std::string s) : str(s) {}
+};
+```
+
