@@ -142,7 +142,7 @@ int main(){
     }
     //程序运行到此时a变量依旧存在而b这个自动变量已经消失被程序释放
     cout<<a;
-    return 0；
+    return 0;
 }
 ```
 
@@ -184,7 +184,7 @@ class _XXX{
     	std::string int str;
     public:
 		_XXX(const std::string s) : str(s) {}
-};
+};//一般来说，只有构造函数可以用这种形式
 ```
 
 ## 构造函数和析构函数理解
